@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>The Best Boy</title>
+  </head>
+
+  <!-- Body of HTML page -->
+  <body style="background-color:cyan">
+
+    <header>
+      <h1 style="color:blue">
+        The Pup Clutch
+      </h1>
+      <h3>
+        Welcome to Clutch's Website!
+      </h3>
+    </header>
+
+    <!-- Create a section for biography -->
+    <section>   
+
+      <h4>Biography:</h4>
+
+	  	<article>
+	  		<p>Clutch's life prior to his rescue from dog jail is mostly a mystery. He doesn't like to talk about it much, but, from what have learned, he led a <em>ruff</em> life. Now, Clutch has learned to enjoy the finer things in life...treats, walks to the park, belly rubs, and all the naps he can get. You won't find a cuter rat-terrier/chihuahua/german-shepard/pekingese/poodle (he's been tested) dog around!</p>
+
+	  		<hr> <!-- This is a "thematic break" adds a visible break line in page -->
+
+	  		<p>Here are a few facts about Clutch:</p>
+
+        <ul>
+          <li id="currentAge"></li>
+          <li> Favorite toys: 
+          	<ol>
+          		<li>Christmas Gorilla</li>
+          		<li>Mr. Moose</li>
+          		<li>orange tennis ball</li>
+          		<li>Hedgehog</li>
+          	</ol>
+          </li>
+          <li> Favorite food: whatever you're currently eating near him </li>
+          <li> Favorite pastime: napping</li>
+        </ul>
+
+      </article>
+    </section>
+
+    <!-- Display the image of Clutch -->
+    <section>
+	    <figure>
+	      <a href="images/clutch.jpg" target="new">
+	        <img src="images/clutch.jpg" alt="Clutch the dog">
+	      </a>
+	      <figcaption>Clutch the dog</figcaption>
+	    </figure>
+		</section>
+
+    <!-- This paragraph will be the option box where the user selects an option -->
+    <p>
+      <select id="mySelect" onchange="myFunction()">
+        <optgroup label="Options">
+          <option disabled selected value> -- Select an option -- </option>
+          <option>BEST</option>
+          <option>BESTEST</option>
+          <option>SWEETEST</option>
+        </optgroup> 
+      </select>
+    </p>
+
+    <!-- This is the "paragraph" where the response from the option box will be put. It gets changed by "myFunction" -->
+    <p id="response"></p>
+
+    <!-- Bottom of the page stuff -->
+    <hr> <!-- This is a "thematic break" adds a visible break line in page -->
+    <footer>
+      <address>
+        Contact the author of this page:
+        <a href="mailto:crispc85@gmail.com">crispc85@gmail.com</a>
+      </address>
+      <p id="footercr"></p>
+    </footer>
+
+    <!-- This is the function to display the response to the selection box -->
+    <script>
+      function myFunction() {
+        var x = document.getElementById("mySelect").value;
+        document.getElementById("response").innerHTML = "You said Clutch is the <em><strong>" + x + "</strong></em> boy!";
+      }
+    </script>
+
+    <!-- This javascript will calculate Clutch's age (just current year minus birth year) and populate the line item in the bio list
+          Also will populate the current year in the "copyright" in the footer -->
+    <script>
+      var d = new Date();
+      document.getElementById("currentAge").innerHTML = "Currently <strong>" + (d.getFullYear() - 2012) + "</strong> years old";
+      document.getElementById("footercr").innerHTML = "<em>© " + d.getFullYear() +" Corey Crisp</em>";
+    </script>
+
+  </body>
+
+</html>
